@@ -69,10 +69,9 @@ def read_file(input_file):
 
 
 
-##### or get it from input?????
-def findOrder():
-
-    return 
+##### or get it from input??????????????????????????????????????????????????????????????????????????????????????
+def findOrder(cards):
+    return len(cards[0])-1
 
 class Verificator():
     def __init__(self):
@@ -85,13 +84,16 @@ class Verificator():
         # TODO
         # a completer
             
-        order = 7 ################################################# get order number #####################
+        
         cards = read_file(cards_file)
 
-        symbols_split_cards = []
+        symbols_split_cards = [] 
 
         for card in cards:
             symbols_split_cards.append(card.split())
+
+        
+        order = findOrder(symbols_split_cards) #####################################################################
 
         # test : le nombre de carte devrait être optimal
         cardsno_isOptimal = verifyOptimalCardsno(cards, order)
