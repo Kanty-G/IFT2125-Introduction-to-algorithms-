@@ -122,7 +122,7 @@ class Verificator():
         # avertissement (1) si le jeu de carte n'est pas optimal
         # erreur (2) si le jeu de carte n'est pas valide
         
-        if has_n_plus_one_Symbols and symbolsno_isOptimal and cardsno_isOptimal and has_same_no_symbols :
+        if has_n_plus_one_Symbols and symbolsno_isOptimal and cardsno_isOptimal and has_same_no_symbols and and has_one_Common_Symbol:
             return 0
         elif has_same_no_symbols and has_one_Common_Symbol:
             return 1
