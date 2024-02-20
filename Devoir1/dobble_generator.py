@@ -7,7 +7,7 @@ class Generator:
     def __init__(self, order=7):
         self.order = order
 
-    def generate(self, cards_file="cartesTest.txt", verbose=False):
+    def generate(self, cards_file="cartes.txt", verbose=False):
         if verbose:
             print("*** Génération des cartes ***")
         
