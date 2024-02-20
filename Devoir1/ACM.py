@@ -1,5 +1,5 @@
+#Marianne Schmit Pemmerl , Matricule
 #Kanty-Louange Gakima, 20184109
-#Nom, Matricule
 
 import math
 import sys
@@ -35,15 +35,15 @@ def read_problems(input_file):
     return problems
 
 def write(fileName, content):
-    #écrire la sortie dans un fichier/write output in file
     file = open(fileName, "w")
     file.write(content)
     file.close()
 
 
 #On a utilisé l'algorithme de Kruskal pour trouver l'arbre couvrant minimal
-    
-def distance(sommet1, sommet2):#formule de la distance euclidenne
+   
+def distance(sommet1, sommet2):
+    #formule de la distance euclidenne
     return math.sqrt((sommet1[0]-sommet2[0])**2 + (sommet1[1]-sommet2[1])**2)
 
 #fonction pour trouver le parent
@@ -61,9 +61,9 @@ def union(parent, rank, x, y):
     else: 
         parent[y] = x 
         rank[x] += 1
-  
+ 
 # Calcul du poids de l'Arbre Couvrant Minimal pour un seul  problème 
-def calculate_mst_weight(coordinates):
+def calculate_weight(coordinates):
     v = len(coordinates)  # Nombre de sommets
 
     # Création  des arêtes
@@ -87,7 +87,7 @@ def calculate_mst_weight(coordinates):
 
     return min_weight
 
-#Fonction main/Main function
+
 def main(args):
     input_file = args[0]
     output_file = args[1]
@@ -98,7 +98,7 @@ def main(args):
     for problem in problems:
 
         # Calcul du poids de l'ACM pour le problème actuel
-        min_weight = calculate_mst_weight(problem)
+        min_weight = calculate_weight(problem)
      
          #Arrondir à trois chiffres après la virgule
         min_weight_rounded = round(min_weight, 3)
