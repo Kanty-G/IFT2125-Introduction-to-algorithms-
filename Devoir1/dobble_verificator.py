@@ -1,5 +1,5 @@
 #Marianne Schmit Pemmerl, 20192143
-#Kanty-Louange Gakima, Matricule
+#Kanty-Louange Gakima, 20184109
 
 # cette classe sert a verifier la validite de l'ensemble des cartes du jeu dans le fichier cartes.txt
 # this class is used to check the validity  of the game cards set in the cartes.txt file
