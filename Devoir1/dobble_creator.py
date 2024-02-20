@@ -1,4 +1,4 @@
-#Nom, Matricule
+#Marianne Schmit Pemmerl, 20192143
 #Kanty-Louange Gakima, 20184109
 
 # cette classe sert a créer les cartes visuelles du jeu dans le dossier "results"
@@ -6,7 +6,6 @@
 
 from PIL import Image
 import os
-import math
 import random
 
 # info :
@@ -28,9 +27,6 @@ class Creator():
     def make_cards(self, cards_file = "cartes.txt", verbose = False):
         if verbose :
             print("***Creation des cartes visuelles***")
-
-        # TODO
-        # a completer
 
         # lecture des images à partir du dossier "images" : "1.png2, "2.png", "3.png", ... "<N>.png"
         # placement des images sur les cartes visuelles, rotations apreciees
@@ -57,14 +53,13 @@ class Creator():
         order = len(cards[0]) - 1
 
         # Création des cartes visuelles
-        results_folder = "resultsTests"
+        results_folder = "results"
         if not os.path.exists(results_folder):
             os.makedirs(results_folder)
 
         for i, symbols in enumerate(cards):
             # Création d'une nouvelle image pour la carte
             card_image = Image.new('RGB', (pic_size + self.border_size, pic_size + self.border_size), color='white')
-            total_symbols = len(symbols)
             symbol_width = pic_size // ( int(order ** 0.5)+1)  # 3 symboles horizontalement 
             symbol_height = pic_size // (int(order ** 0.5)+1) # 3 symboles verticalement
 
