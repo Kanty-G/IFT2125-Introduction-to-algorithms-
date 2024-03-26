@@ -47,9 +47,7 @@ int ClimbingDifficultyCalculator::minDifficulty(std::vector<std::vector<int> > w
                 else { break; }
  
             }
-            std::cout << dp[i][j] << " ";
-        }
-        std::cout << "end ofline"<< std::endl;
+        } 
     }
 
     // Trouver la difficulté minimale dans la dernière ligne de la matrice dynamique
