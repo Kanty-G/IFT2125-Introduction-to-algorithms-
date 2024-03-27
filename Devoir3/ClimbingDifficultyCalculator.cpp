@@ -4,9 +4,9 @@
 #include "ClimbingDifficultyCalculator.h"
 #include <fstream>
 #include <vector>
-#include <unordered_set>
-#include <math.h>
-#include <algorithm>
+//#include <unordered_set>
+//#include <math.h>
+//#include <algorithm>
 #include <iostream>
 
 // ce fichier contient les definitions des methodes de la classe ClimbingDifficultyCalculator
@@ -33,7 +33,7 @@ int ClimbingDifficultyCalculator::minDifficulty(std::vector<std::vector<int> > w
     for (int i = rows-2; i >=0 ; --i) {
         for (int j = 0; j < cols; ++j) {
 
-            // Choix de la valeur optimale en fonction des cases adjacentes dans la ligne précédente
+            // Choix de la difficulté minimale pour atteindre la case (i,j)
             int updifficulty = dp[i + 1][j];
             int leftDifficulty = (j > 0) ? dp[i ][j - 1] : std::numeric_limits<int>::max();
             int rightDifficulty = (j < cols - 1) ? dp[i ][j + 1] : std::numeric_limits<int>::max();
@@ -50,7 +50,7 @@ int ClimbingDifficultyCalculator::minDifficulty(std::vector<std::vector<int> > w
         } 
     }
 
-    // Trouver la difficulté minimale dans la dernière ligne de la matrice dynamique
+    // Trouver la difficulté minimale dans la première ligne de la matrice dynamique
     int minDiff = *std::min_element(dp[0].begin(), dp[0].end());
     
     return minDiff;
@@ -62,7 +62,7 @@ int ClimbingDifficultyCalculator::CalculateClimbingDifficulty(std::string filena
     // Ouvrir le fichier
     std::ifstream file(filename);
     if (!file.is_open()) {
-        std::cerr << "Impossible d'ouvrir le fichier" << std::endl;
+        std::cerr<< "Impossible d'ouvrir le fichier" << std::endl;
         return -1;
     }
 
