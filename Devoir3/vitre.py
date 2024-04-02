@@ -1,5 +1,5 @@
-#Nom, matricule
-#Nom, matricule
+#Kanty-Louange Gakima, matricule
+#Marianne Schmit Pemmerl, 20192143
 
 #Fonction à compléter. Ne modifiez pas sa signature.
 #N : Force maximale
@@ -35,8 +35,8 @@ def vitre(N, k):
     # Remplissage de la table dp pour les cas où k > 1 et N > 2
     for i in range(2, k + 1):  # Pour chaque nombre de fenêtres disponibles
         for j in range(3, N + 1):  # Pour chaque niveau de force à tester
-            for m in range(1, j):  # Tester chaque niveau de force  
-                nombre_de_tests = 1 + max(dp[i-1][m], dp[i][j-m]) #1 test + le pire cas entre casser et ne pas casser la fenêtre
+            for x in range(1, j):  # Tester chaque niveau de force  
+                nombre_de_tests = 1 + max(dp[i-1][x], dp[i][j-x]) #1 test + le pire cas entre casser et ne pas casser la fenêtre
                 dp[i][j] = min(dp[i][j], nombre_de_tests)
     return dp[k][N]
 
