@@ -1,0 +1,1 @@
+The projects in different files are based on important algorithms such as Kruskal, Prim, Dijkstra, Miller-Rabin, and dynamic programming, etc.Each project is implemented to demonstrate the application and efficiency of these algorithms in solving various computational problems.
